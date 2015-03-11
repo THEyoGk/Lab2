@@ -1,0 +1,10 @@
+#!/bin/bash
+# My first script
+
+while true
+do
+#wget -O 'in.html' http://6.pogoda.by 
+A=`grep -A8 'outer_wrapper' 'in.html'`
+echo $A|grep strong |sed  's/<br>/ /g'| awk '{print $22}'
+sleep 5s
+done
